@@ -19,6 +19,13 @@ jobs:
         with:
             gradle-version: '8.0'
             validate-wrappers: false
+
+      - name: Install CMake 3.18.1
+        run: |
+              SDK_DIR="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+              yes | "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+              "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager" "cmake;3.18.1"
+
   
       - name: Build release APK  
         working-directory: duix-android/dh_aigc_android  
