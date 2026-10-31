@@ -22,7 +22,7 @@ jobs:
   
       - name: Build release APK  
         working-directory: duix-android/dh_aigc_android  
-        run: gradlew :test:assembleRelease --stacktrace  
+        run: gradle :test:assembleRelease --stacktrace  
   
       - name: Upload APK  
         uses: actions/upload-artifact@v4  
