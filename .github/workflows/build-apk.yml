@@ -1,9 +1,8 @@
 name: Build APK  
   
 on:  
-  push:  
-    branches: [main]  
-  workflow_dispatch:      # 允许手动触发  
+   
+  workflow_dispatch:  
   
 jobs:  
   build:  
@@ -14,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v4  
         with:  
           distribution: 'temurin'  
-          java-version: '17'          # 项目要求 Gradle JDK 17  
+          java-version: '17'  
   
       - uses: gradle/actions/setup-gradle@v4  
   
